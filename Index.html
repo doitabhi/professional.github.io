@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Words with Meaning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #aaa;
+            width: 400px;
+            text-align: center;
+        }
+        select, button {
+            padding: 10px;
+            width: 80%;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        #output {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <h2>Select a Professional Word</h2>
+        <select id="wordDropdown">
+            <option value="">--Select a word--</option>
+            <option value="synergy">Synergy</option>
+            <option value="paradigm">Paradigm</option>
+            <option value="leverage">Leverage</option>
+            <option value="proactive">Proactive</option>
+            <option value="streamline">Streamline</option>
+            <option value="innovation">Innovation</option>
+            <option value="scalable">Scalable</option>
+            <option value="holistic">Holistic</option>
+            <option value="facilitate">Facilitate</option>
+            <option value="benchmark">Benchmark</option>
+            <!-- Additional words -->
+            <option value="optimization">Optimization</option>
+            <option value="collaboration">Collaboration</option>
+            <option value="alignment">Alignment</option>
+            <option value="transparency">Transparency</option>
+            <option value="accountability">Accountability</option>
+            <option value="iteration">Iteration</option>
+            <option value="empowerment">Empowerment</option>
+            <option value="resilience">Resilience</option>
+            <option value="diversification">Diversification</option>
+            <option value="disruption">Disruption</option>
+        </select>
+        <div id="output">
+            <p><strong>Meaning:</strong> <span id="meaning"></span></p>
+            <p><strong>Example Sentence:</strong> <span id="example"></span></p>
+        </div>
+    </div>
+
+    <script>
+        const wordsData = {
+            "synergy": {
+                meaning: "The interaction or cooperation of two or more organizations to produce a combined effect greater than the sum of their individual efforts.",
+                example: "By working together, the companies were able to create a synergy that boosted their productivity."
+            },
+            "paradigm": {
+                meaning: "A typical example or pattern of something; a model.",
+                example: "The company's new business model represents a paradigm shift in the industry."
+            },
+            "leverage": {
+                meaning: "To use something to its maximum advantage.",
+                example: "We can leverage our existing technology to expand into new markets."
+            },
+            "proactive": {
+                meaning: "Creating or controlling a situation by causing something to happen rather than responding to it after it has happened.",
+                example: "By being proactive, the team was able to address potential problems before they arose."
+            },
+            "streamline": {
+                meaning: "To make a process or organization more efficient and effective by simplifying or eliminating unnecessary steps.",
+                example: "We need to streamline our workflow to improve productivity."
+            },
+            "innovation": {
+                meaning: "The introduction of new ideas, methods, or products.",
+                example: "Our focus on innovation has allowed us to stay ahead of the competition."
+            },
+            "scalable": {
+                meaning: "Capable of being changed in size or scale.",
+                example: "The system is highly scalable and can handle increased demand without any issues."
+            },
+            "holistic": {
+                meaning: "Considering the whole of something rather than just its parts.",
+                example: "We take a holistic approach to solving our clients' problems."
+            },
+            "facilitate": {
+                meaning: "To make an action or process easier.",
+                example: "We need someone to facilitate the communication between departments."
+            },
+            "benchmark": {
+                meaning: "A standard or point of reference against which things may be compared.",
+                example: "We are using last year's sales numbers as a benchmark for this year's performance."
+            },
+            // Additional words
+            "optimization": {
+                meaning: "The action of making the best or most effective use of a situation or resource.",
+                example: "We are working on optimization of our current systems to improve efficiency."
+            },
+            "collaboration": {
+                meaning: "The action of working with someone to produce or create something.",
+                example: "The success of the project depended on effective collaboration between the teams."
+            },
+            "alignment": {
+                meaning: "Arrangement in a straight line, or in correct or appropriate relative positions.",
+                example: "We need to ensure alignment between the different departments to achieve our goals."
+            },
+            "transparency": {
+                meaning: "The condition of being transparent or straightforward.",
+                example: "The company prides itself on its transparency with stakeholders."
+            },
+            "accountability": {
+                meaning: "The fact or condition of being responsible for one's actions.",
+                example: "Leaders must maintain a high level of accountability in their decisions."
+            },
+            "iteration": {
+                meaning: "The repetition of a process in order to generate a sequence of outcomes.",
+                example: "The design process involves multiple iterations before final approval."
+            },
+            "empowerment": {
+                meaning: "The authority or power given to someone to do something.",
+                example: "The company's culture fosters employee empowerment at all levels."
+            },
+            "resilience": {
+                meaning: "The ability to recover quickly from difficulties; toughness.",
+                example: "Her resilience in the face of challenges inspired the entire team."
+            },
+            "diversification": {
+                meaning: "The action of diversifying something or the fact of becoming more diverse.",
+                example: "The company is focusing on diversification to mitigate risks."
+            },
+            "disruption": {
+                meaning: "Disturbance or problems which interrupt an event, activity, or process.",
+                example: "Technological disruption has changed the landscape of many industries."
+            }
+        };
+
+        document.getElementById('wordDropdown').addEventListener('change', function() {
+            const selectedWord = this.value;
+
+            if (selectedWord && wordsData[selectedWord]) {
+                document.getElementById('meaning').textContent = wordsData[selectedWord].meaning;
+                document.getElementById('example').textContent = wordsData[selectedWord].example;
+            } else {
+                document.getElementById('meaning').textContent = '';
+                document.getElementById('example').textContent = '';
+            }
+        });
+    </script>
+
+</body>
+</html>
